@@ -2,7 +2,7 @@ using System;
 
 class Program {
 
-  public class void Main(){
+  public static void Main(){
 
   Console.WriteLine("Olá Mundo");
 
