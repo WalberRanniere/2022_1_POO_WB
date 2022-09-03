@@ -98,22 +98,41 @@ class Program {
       Console.WriteLine("---- Inserir uma novo Filme ----");
       Console.Write("Informe o id do Filme: ");
       int nro_sala = int.Parse(Console.ReadLine());
-      Console.WriteLine("Informe a sua quantidade: ");
-      int quantidade = int.Parse(Console.ReadLine());
-      Sala obj = new Sala(nro_sala, quantidade);
-      Sistema.SalaInserir(obj);
+      Console.WriteLine("Informe a seu Titulo: ");
+      string titulo = Console.ReadLine();
+      Console.Write("Informe a sua duração: ");
+      string duracao = Console.ReadLine();
+      Filme obj = new Sala(id, titulo, duracao);
+      Sistema.FilmeInserir(obj);
       Console.WriteLine("---- Operação realizada com sucesso ----");
     }
     public static void FilmeListar() {
-      
+      Console.WriteLine("---- Listar os filmes cadastrados ----");
+      foreach(Filme obj in Sistema.FilmeListar())
+        Console.WriteLine(obj);
+      Console.WriteLine("---------------------------");
     } 
     public static void FilmeAtualizar() {
-      
+      Console.WriteLine("---- Atualizar um filme ----");
+      Console.Write("Informe o id do filme a ser atualizado: ");
+      int id = int.Parse(Console.ReadLine());
+      Console.Write("Informe o titulo do filme: ");
+      string titulo = Console.ReadLine();
+      Console.Write("Informe a duracao do filme: ");
+      string duracao = Console.ReadLine();
+      Filme obj = new Filme(id, titulo, duracao);
+      sistema.FilmeAtualizar(obj);
+      Console.WriteLine("---- Operação realizada com sucesso ----");
     }
     public static void FilmeExcluir() {
-      
+    Console.WriteLine("---- Excluir um filme ----");
+      Console.WriteLine("Informe o id do filme a ser excluido: ");
+      int id = int.Parse(Console.ReadLine());
+      Filme obj = new Filme(id);
+      Sistema.FilmeExcluir(obj);
+      Console.WriteLine("---- Operação realizada com suxesso ----");
     }
-    public static void GeneroInderir() {
+    public static void GeneroInserir() {
       
     }
     public static void GeneroListar() {
