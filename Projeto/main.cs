@@ -133,16 +133,38 @@ class Program {
       Console.WriteLine("---- Operação realizada com suxesso ----");
     }
     public static void GeneroInserir() {
-      
+      Console.WriteLine("---- Inserir um novo Gênero ----");
+      Console.Write("Informe o id: ");
+      int id = int.Parse(Console.ReadLine());
+      Console.Write("Informe o nome do Gênero: ");
+      string descricao = Console.ReadLine();
+      Genero obj = new Genero(id, descricao);
+      Sistema.GeneroInderir(obj);
+      Console.WriteLine("---- Operação realizada com sucesso ----");
     }
     public static void GeneroListar() {
-      
+      Console.WriteLine("---- Listar os Gêneros cadastrados ----");
+      foreach(Filme obj in Sistema.FilmeListar())
+        Console.WriteLine(obj);
+      Console.WriteLine("----------------------------")
     }
     public static void GeneroAtualizar() {
-      
+      Console.WriteLine("---- Atualizar um Gênero ----");
+      Console.Write("Informe o id do Gênero a ser atualizado: ");
+      int id = int.Parse(Console.ReadLine());
+      Console.Write("Informe o nome do Gênero a ser atualizado: ");
+      string descricao = Console.ReadLine();
+      Filme obj = new Filme(id, descricao);
+      Sistema.FilmeAtualizar(obj);
+      Console.WriteLine("---- Operação realizada com sucesso ----");
     }
     public static void GeneroExcluir() {
-      
+      Console.WriteLine("---- Excluir um Gênero ----");
+      Console.Write("Informe o id do Gênero a ser excluido: ");
+      int id = int.Parse(Console.ReadLine());
+      Filme obj = new Filme(id);
+      Sistema.FilmeExcluir(obj);
+      Console.WriteLine("---- Operação realizada com sucesso ----");
     }
     public static void SessaoInserir() {
       
